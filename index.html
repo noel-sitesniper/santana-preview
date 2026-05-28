@@ -153,17 +153,16 @@ footer a{color:var(--or);text-decoration:none}
 #sntop .bj{background:#f59e0b;color:#1a1a2e;font-weight:700;font-size:10px;padding:3px 8px;border-radius:20px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
 #sntop .tx{font-size:12px;color:#cbd5e1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #sntop .go{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-weight:700;font-size:12px;padding:8px 16px;border-radius:7px;text-decoration:none;white-space:nowrap;flex-shrink:0}
-#snbot{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:3px solid #f59e0b;padding:10px 16px;font-family:'Inter',system-ui,sans-serif;box-shadow:0 -4px 30px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap}
-#snbot .pk{display:flex;gap:12px;flex-wrap:wrap;flex:1;align-items:center}
-#snbot .p{font-size:12px;color:#374151;font-weight:500}
+#snbot{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:3px solid #f59e0b;padding:8px 16px;font-family:'Inter',system-ui,sans-serif;box-shadow:0 -4px 30px rgba(0,0,0,.15);display:flex;flex-direction:column;gap:6px}
+#snbot-row1{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#snbot-price{text-align:right}
+#snbot-price .was{font-size:10px;color:#9ca3af;text-decoration:line-through}
+#snbot-price .now{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1}
+#snbot-price .sub{font-size:10px;color:#6b7280}
+#snbot-row2{display:flex}
+#snbot-row2 .cta{flex:1;text-align:center}
 #snbot .twr{display:flex;align-items:center;gap:5px;font-size:11px;color:#ef4444;font-weight:700;white-space:nowrap}
 #snbot .tbox{background:#fef2f2;border:1px solid #fecaca;border-radius:5px;padding:2px 6px;font-size:13px;font-weight:800;min-width:26px;text-align:center}
-#snbot .pb{display:flex;align-items:center;gap:12px;flex-shrink:0}
-#snbot .pr{text-align:right}
-#snbot .pr .was{font-size:10px;color:#9ca3af;text-decoration:line-through}
-#snbot .pr .now{font-size:22px;font-weight:800;color:#1a1a2e;line-height:1}
-#snbot .pr .sub{font-size:10px;color:#6b7280}
-#snbot .pr .rec{font-size:10px;color:#f97316;font-weight:700;margin-top:1px}
 #snbot .cta{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-weight:800;font-size:14px;padding:13px 22px;border-radius:10px;text-decoration:none;white-space:nowrap;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(245,158,11,.4)}50%{box-shadow:0 4px 30px rgba(245,158,11,.7)}}
 
@@ -225,19 +224,7 @@ footer a{color:var(--or);text-decoration:none}
 @media(max-width:768px){
   #contact [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
 }
-.nl-short{display:none}.nl-full{display:inline}@media(max-width:480px){.nl-full{display:none}.nl-short{display:inline}}@media(max-width:600px){
-  #snbot{flex-direction:column;align-items:stretch;padding:8px 12px;gap:6px}
-  #snbot .pk{display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
-  #snbot .p{display:none}
-  #snbot .twr{font-size:11px;justify-content:center}
-  #snbot .pb{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
-  #snbot .pr{text-align:left;flex:1}
-  #snbot .pr .was{font-size:9px}
-  #snbot .pr .now{font-size:20px;font-weight:800}
-  #snbot .pr .sub{font-size:9px}
-  #snbot .pr .rec{font-size:9px}
-  #snbot .cta{font-size:13px;padding:10px 14px;white-space:nowrap}
-}</style>
+.nl-short{display:none}.nl-full{display:inline}@media(max-width:480px){.nl-full{display:none}.nl-short{display:inline}}</style>
 </head>
 <body>
 
@@ -446,20 +433,15 @@ function cfSubmit(){
 
 <!-- BOTTOM CTA BAR -->
 <div id="snbot">
-  <div class="pk">
-    <span class="p">&#10003; Custom Domain</span>
-    <span class="p">&#9889; Live 24-48hrs</span>
-    <span class="p">&#128241; Mobile-Ready</span>
-    <span class="p">&#128274; No Contracts</span>
+  <div id="snbot-row1">
     <div class="twr">&#128293; Offer expires: <span class="tbox" id="th">23</span>:<span class="tbox" id="tm">59</span>:<span class="tbox" id="ts">59</span></div>
-  </div>
-  <div class="pb">
-    <div class="pr">
+    <div id="snbot-price">
       <div class="was">$1,200 value</div>
       <div class="now">$750</div>
-      <div class="sub">one-time setup</div>
-      <div class="rec">then $100/mo hosting</div>
+      <div class="sub">one-time setup &bull; then $100/mo hosting</div>
     </div>
+  </div>
+  <div id="snbot-row2">
     <a href="https://square.link/u/SjwnWcQd" class="cta">Get It Live Now &#8594;</a>
   </div>
 </div>
